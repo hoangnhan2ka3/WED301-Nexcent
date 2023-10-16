@@ -1,0 +1,555 @@
+<!doctype html>
+<html>
+	
+<head>
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="W2/HoangNhan-SE171176-GD1708_WED301/favicon.png"/>
+	
+<script src="https://kit.fontawesome.com/de261470fa.js" crossorigin="anonymous"></script>
+	
+<meta charset="utf-8">
+
+<title>Nexcent</title>
+	
+</head>
+
+<style>
+	* {
+  		margin: 0;
+  		padding: 0;
+		}
+
+	#body{font-family: 'Inter', sans-serif;
+		font-size: 1rem;
+		line-height: 1.5;
+		margin: 0; /* Đảm bảo không có margin trên và dưới body */
+    	padding: 0; /* Đảm bảo không có padding trên và dưới body */
+		}
+
+	.nav{
+		background-color: #FFFFFF;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000; /* Đảm bảo header hiển thị trên cùng */
+		box-shadow: 0 0 10px rgba(76, 175, 79, 0.5); /* Thêm shadow phía dưới */
+		box-sizing: border-box;
+		}
+	
+	.nav-content{
+		width: 100%;
+		height: 64px;
+		justify-content: space-between;
+		display: flex;
+		max-width: 1170px;
+		align-items: center;
+		margin: 0 auto;
+		}
+	
+	.logo{
+		margin-right: 20px;
+		}
+	
+	.right-menu{
+		display: flex;
+		align-items: center;
+		}
+	
+	.menu{
+		display: flex;
+		list-style: none; /*Bỏ chấm trong list*/
+		font-weight: 400;
+		padding: 0;
+    	margin: 0;
+		}
+	
+	.menu li{
+		position: relative; /* Để các chữ con có thể thực hiện transform */
+		margin: 0 20px;
+		}
+	
+	.menu a{
+		text-decoration: none;
+		color: black;
+		transition: all 0.2s;
+		}
+	
+	.menu li a:hover{
+    	color: #4CAF4F;
+		text-decoration: none;
+		}
+	
+	.login{
+		margin: 0 20px 0 20px;
+		border: none;
+		background-color: transparent;
+		}
+	
+	.login a{
+		text-decoration: none;
+		color: #4CAF4F;
+		font-size: 16px;
+	   }
+	
+	.login:hover{
+		text-decoration: underline;
+		text-decoration-color:#4CAF4F; 
+		}
+	
+	.sign-up{
+		border: none;
+		border-radius: 3px;
+		width: 130px;
+		height: 45px;
+		padding: 0; /* Làm hitbox tràn ra toàn bộ*/
+		background-color: #4CAF4F;
+		transition: background-color 0.25s; /* Thêm transition cho hiệu ứng hover */
+		}
+	
+	.sign-up a{
+		text-decoration: none;
+		font-family: 'Inter', sans-serif;
+		color: white;
+		font-weight: 500;
+		font-size: 16px;
+    	width: 100%; /* Kích thước thẻ a bằng với .signup */
+    	height: 100%; /* Kích thước thẻ a bằng với .signup */
+		display: flex; /* Sử dụng flexbox */
+    	justify-content: center; /* Canh giữa theo chiều ngang */
+    	align-items: center; /* Canh giữa theo chiều dọc */
+		}
+	
+	.sign-up a i{
+		margin-left: 8px;
+		}
+	
+	.sign-up:hover{
+    	background-color: white; /* Màu xám khi di chuột vào */
+		border: 2px solid #4CAF4F;
+		box-shadow: 0 0 10px 0 rgba(76, 175, 79, 1); /* Shadow khi hover */
+		}
+	
+	.sign-up:hover a{
+    	color: #4CAF4F; /* Màu chữ trắng khi di chuột vào */
+		}
+	
+	
+	
+	/*-----------------------------------------------------------------*/
+	
+	
+	
+	.hero{
+		width: 100%;
+		height: 495.82px;
+ 		background-color: #f5f7fa;
+		margin-top: 64px; /* Điều chỉnh khoảng cách giữa header và hero */
+		box-sizing: border-box;
+		}
+	
+	.container-hero{
+		width: 100%;
+		height: 100%;
+		display: flex; /*FLEX*/
+		justify-content: space-between;
+		align-items: center;
+		top: 0;
+		max-width: 1170px;
+		margin: 0 auto;
+		}
+	
+	.left-hero{
+		width: 500px;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+		}
+	
+	.right-hero{
+		margin-left: 50px;
+		}
+	
+	.color-big-text{
+		color: #4d4d4d;
+		font-weight: 600;
+		line-height: 1.1;
+		font-size: 43px;
+		margin: 0;
+		}
+	
+	.green-big-text{
+		color: #4CAF4F;
+		font-weight: 600;
+		}
+	
+	.hero-content{
+		color: #808080;
+		margin: 16px 0 24px 0;
+		}
+	
+	.register{
+		border: none;
+		border-radius: 3px;
+		width: 115px;
+		height: 45px;
+		padding: 0; /* Làm hitbox tràn ra toàn bộ*/
+		background-color: #4CAF4F;
+		transition: background-color 0.25s; /* Thêm transition cho hiệu ứng hover */
+		}
+	
+	.register a{
+		text-decoration: none;
+		font-family: 'Inter', sans-serif;
+		color: white;
+		font-weight: 500;
+		font-size: 16px;
+    	width: 100%; /* Kích thước thẻ a bằng với .signup */
+    	height: 100%; /* Kích thước thẻ a bằng với .signup */
+		display: flex; /* Sử dụng flexbox */
+    	justify-content: center; /* Canh giữa theo chiều ngang */
+    	align-items: center; /* Canh giữa theo chiều dọc */
+		}
+	
+	.register:hover{
+    	background-color: white; /* Màu xám khi di chuột vào */
+		border: 2px solid #4CAF4F;
+		box-shadow: 0 0 10px 0 rgba(76, 175, 79, 1); /* Shadow khi hover */
+		}
+	
+	.register:hover a{
+    	color: #4CAF4F; /* Màu chữ xanh khi di chuột vào */
+		}
+	
+	/*-----------------------------------------------------------------*/
+	
+	.footer{
+		overflow: hidden;
+		background-color: #263238;
+		}
+	
+	.container-footer{
+		width: 100%;
+		height: 469.79px;
+		max-width: 1170px;
+		margin: 0 auto;
+		}
+	
+	.up-footer{
+		width: 100%;
+		display: flex; /*FLEX*/
+		padding-bottom: 0;
+		color: white;
+		justify-content: space-between;
+		box-sizing: border-box;
+		padding-top: 80px;
+		}
+	
+	.low-footer{
+		width: 100%;
+		box-sizing: border-box;
+		}
+	
+	.logo-footer{
+		margin-bottom: 18px;
+		}
+	
+	.contact{
+		margin-top: 48px;	
+		display: flex;	
+		}
+	
+	.contact a{
+		margin-right: 10px;
+		width: 40px;
+		height: 40px;
+		color: white;
+		background-color: rgba(255,255,255,0.10);
+		border-radius: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+		font-size: 20px;
+		}
+	
+	.left-footer{
+		width: 210px;
+		height: 100%;
+		margin-right: 20px;
+		}
+	
+	.left-footer p{
+		width: 220px;
+		height: 100%;
+		line-height: 2;
+		}
+	
+	.right-footer{
+		width: 65%; /* ĐIỀU CHỈNH KÍCH THƯỚC RIGHT-FOOTER */
+		overflow: hidden;
+		display: flex;
+		justify-content: space-between;
+		}
+	
+	.title-footer{
+		font-size: 19.12px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 600;
+		margin-bottom: 24px;
+		}
+	
+	.second-footer{
+		width: 250px;
+		height: 100%;
+		}
+	
+	.second-footer p{
+		line-height: 1.0;
+		}
+	
+	.second-footer a{
+		color: white;
+		text-decoration: none;
+		line-height: 2;
+		}
+	
+	.third-footer{
+		width: 250px;
+		height: 100%;
+		margin-left: 15%;
+		}
+	
+	.third-footer p{
+		line-height: 1.0;
+		width: 200%;
+		}
+	
+	.third-footer a{
+		color: white;
+		text-decoration: none;
+		line-height: 2;
+		}
+	
+	.forth-footer{
+		line-height: 1;
+		width: 1500px;
+		height: 100%;
+		margin-left: 18%;
+		position: relative; /* Thêm thuộc tính position */
+		}
+	
+	.email-input{
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 38px;
+		color: #DBDBDB;
+		border-radius: 6.5px;
+		border: none;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		background-color: rgba(255,255,255,.2);
+		font-size: 14px;
+		margin-top: 28px;
+		padding: 0; /* Loại bỏ padding để làm cho .email-input lấp đầy phần nền */
+		}
+	
+	 .email-icon {
+ 		margin-right: 12px;
+		margin-left: 12px;
+		background-color: transparent;
+		color: white;
+		align-items: center;
+  		font-size: 18px; /* Điều chỉnh kích thước của biểu tượng */
+		}
+
+	 .form_input{
+		color: #DBDBDB;
+		background-color: transparent;
+		font-weight: 400;
+		}
+	
+	.email-input input::placeholder {
+  		color: #DBDBDB;
+		background-color: transparent;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		}
+	
+	.email-input input:focus {
+		background-color: transparent;
+  		outline: none; /* Ẩn viền focus khi tập trung vào ô nhập */
+		}
+	
+	.email-input input {
+  		flex: 1; /* Để input mở rộng hết khung cha */
+  		border: none;
+  		background-color: transparent; /* Đặt màu nền trong suốt */
+  		margin: 0px; /* Loại bỏ margin */
+  		padding: 0px 16px; /* Đặt padding cho khoảng trống phía trái và phải của input */
+  		font-size: 14px;
+  		outline: none; /* Loại bỏ viền khi focus vào input */
+		}
+	
+    .line{
+        width: 100%;
+        height: .7px;
+		margin-top: 48px;
+        background-color: white;
+    	}
+	
+	.with-love{
+		color: white;
+		margin-top: 32px;
+		}
+</style>	
+	
+<body id="body">
+	
+	<div class="nav">
+		
+		<div class="nav-content">
+			
+			<div class="logo">
+
+				<a href="#"><img src="images/Dark Nexcent.png" width="108" alt="Nexcent"></a>
+
+			</div>
+
+			<div class="right-menu">
+				<ul class="menu">
+
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Service</a></li>
+					<li><a href="#">Feature</a></li>
+					<li><a href="#">Product</a></li>
+					<li><a href="#">Testimonial</a></li>
+					<li><a href="#">FAQ</a></li>
+
+				</ul>
+
+				<div class="button-login">
+
+					<button class="login"><a href="#">Login</a></button>
+
+				</div>
+
+				<div class="button-signup">
+
+					<button class="sign-up"><a href="#">Sign up<i class="fa-solid fa-arrow-right"></i></a></button>
+
+				</div>
+
+			</div>	
+		
+		</div>	
+			
+	</div>
+		
+	<div class="hero">
+		
+		<div class="container-hero">
+		
+			<div class="left-hero">
+
+				<h1 class="color-big-text">Lessons and insights <span class="green-big-text">from 8 years</span></h1>
+
+				<p class="hero-content">Where to grow your business as a photographer: site or social media?</p>
+
+				<button class="register"><a href="#">Register</a></button>
+
+			</div>
+
+			<div class="right-hero">
+
+				<img src="images/Graphic.png" width="324" alt="Nexcent">
+
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<div class="footer">
+		
+		<div class="container-footer">
+		
+			<div class="up-footer">
+
+				<div class="left-footer">
+
+					<div class="logo-footer">
+
+						<a href="#"><img src="images/Light Nexcent.png" width="134" alt="Nexcent"></a>
+
+					</div>
+
+					<p>Copyleft © 2023 Nexcent <br> All rights reserved</p>
+					
+					<div class="contact">
+					
+						<a href="#"><i class="fa-brands fa-instagram"></i></a>
+						<a href="#"><i class="fa-brands fa-dribbble"></i></a>
+						<a href="#"><i class="fa-brands fa-twitter"></i></a>
+						<a href="#"><i class="fa-brands fa-youtube"></i></a>
+					
+					</div>
+					
+				</div>
+
+				<div class="right-footer">
+
+					<div class="second-footer">
+
+						<p class="title-footer">Company</p>
+							<p><a href="#">About us</a></p>
+							<p><a href="#">Blog</a></p>
+							<p><a href="#">Contact us</a></p>
+							<p><a href="#">Pricing</a></p>
+							<p><a href="#">Testimonials</a></p>
+
+					</div>
+
+					<div class="third-footer">
+
+						<p class="title-footer">Support</p>
+							<p><a href="#">Help center</a></p>
+							<p><a href="#">Terms of service</a></p>
+							<p><a href="#">Legal</a></p>
+							<p><a href="#">Privacy policy</a></p>
+							<p><a href="#">Status</a></p>
+
+					</div>
+
+					<div class="forth-footer">
+
+						<p class="title-footer">Stay up to date</p>
+
+						<div class="email-input">
+							<input type="email" class="form_input w-input email-input" placeholder="Your email address" id="email" required>
+							<a href="#"><i class="fa-regular fa-paper-plane email-icon"></i></a>
+						</div>
+
+					</div>
+
+				</div>	
+
+			</div>
+
+			<div class="low-footer">
+
+				<div class="line"></div>
+
+				<p class="with-love">Remade with 💖💖 by hoangnhan2ka3</p>
+
+			</div>
+		
+		</div>	
+			
+	</div>
+</body>
+</html>
